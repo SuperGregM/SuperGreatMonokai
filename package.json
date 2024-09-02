@@ -1,0 +1,91 @@
+{
+  "name": "supergreatmonokai",
+  "displayName": "SuperGreatMonokai",
+  "description": "Great VSCode theme based off sublime text's monokai mixed with VSCode's monokai.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "publisher": "SuperGregM",
+  "author": {
+    "name": "SuperGregM"
+  },
+  "homepage": "https://github.com/SuperGregM/SuperGreatMonokai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SuperGregM/SuperGreatMonokai"
+  },
+  "bugs": {
+    "url": "https://github.com/SuperGregM/SuperGreatMonokai/issues"
+  },
+  "icon": "icon.png",
+  "license": "MIT",
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "monokai",
+    "dark",
+    "csharp syntax highlighting",
+    "fish",
+    "fish syntax highlighting",
+    "shell"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "SuperGreatMonokai",
+        "uiTheme": "vs-dark",
+        "path": "./themes/SuperGreatMonokai-color-theme.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "fish",
+        "aliases": [
+          "Fish"
+        ],
+        "extensions": [
+          ".fish"
+        ],
+        "firstLine": "^#!\\s*/.*\\bfish\\b",
+        "configuration": "./language-configuration/fish-language-configuration.json"
+      },
+      {
+        "id": "csharp",
+        "extensions": [
+          ".cs",
+          ".csx",
+          ".cake"
+        ],
+        "aliases": [
+          "C# Sublime Colorizer",
+          "csharp"
+        ],
+        "configuration": "./language-configuration/csharp-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "fish",
+        "scopeName": "source.fish",
+        "path": "./syntaxes/fish.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.fish.codeblock",
+        "path": "./syntaxes/fish-codeblock.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.fish": "fish"
+        }
+      },
+      {
+        "language": "csharp",
+        "scopeName": "source.cs",
+        "path": "./syntaxes/csharp.tmLanguage.json"
+      }
+    ]
+  }
+}
