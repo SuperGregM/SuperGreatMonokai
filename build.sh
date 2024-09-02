@@ -3,4 +3,4 @@ set -e
 
 rm -rf ./*.vsix
 
-vsce package "$1"
+vsce package "$1" --no-git-tag-version --out ./supergreatmonokai.vsix
