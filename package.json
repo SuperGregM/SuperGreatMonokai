@@ -2,7 +2,7 @@
   "name": "supergreatmonokai",
   "displayName": "SuperGreatMonokai",
   "description": "Great VSCode theme based off sublime text's monokai mixed with VSCode's monokai.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.92.0"
   },
