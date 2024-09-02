@@ -8,7 +8,7 @@ Adds fish Shell Syntax Highlighting Colors.
 
 ## Adds my terminal theme colors:
 
-<img src="./Terminal-Colors.png">
+<img src="./resources/Terminal-Colors.png">
 
 ## Settings
 
@@ -23,7 +23,7 @@ To get the full experience goto your settings.json by doing `Cmd+Shift+P` or `Ct
 
 ## Screenshot (SuperGreatMonokai):
 
-<img src="./screenshot0.png">
+<img src="./resources/screenshot0.png">
 
 ## Credits
 
