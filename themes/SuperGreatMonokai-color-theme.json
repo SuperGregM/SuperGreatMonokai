@@ -264,9 +264,7 @@
 		},
 		{
 			"name": "Number",
-			"scope": [
-				"constant.numeric",
-			],
+			"scope": "constant.numeric",
 			"settings": {
 				"foreground": "#AE81FF"
 			}
@@ -708,14 +706,14 @@
 			"name": "Flutter Classes",
 			"scope": "support.class.dart",
 			"settings": {
-				"foreground": "#66D9EF",
+				"foreground": "#66D9EF"
 			}
 		},
 		{
 			"name": "Flutter Functions",
 			"scope": "entity.name.function.dart",
 			"settings": {
-				"foreground": "#66D9EF",
+				"foreground": "#66D9EF"
 			}
 		},
 		// PYTHON ONLY STUFF
@@ -748,28 +746,28 @@
 			"name": "Python Async Keyword",
 			"scope": "storage.type.function.async",
 			"settings": {
-				"foreground": "#f92672",
+				"foreground": "#f92672"
 			}
 		},
 		{
 			"name": "Python Decorator @",
 			"scope": "punctuation.definition.decorator.python",
 			"settings": {
-				"foreground": "#f92672",
+				"foreground": "#f92672"
 			}
 		},
 		{
 			"name": "Python .",
 			"scope": "punctuation.separator.period.python",
 			"settings": {
-				"foreground": "#f8f8f2",
+				"foreground": "#f8f8f2"
 			}
 		},
 		{
 			"name": "Python Decorator Function",
 			"scope": "entity.name.function.decorator.python",
 			"settings": {
-				"foreground": "#66D9EF",
+				"foreground": "#66D9EF"
 			}
 		},
 		// C++ ONLY STUFF
@@ -820,14 +818,14 @@
 				"entity.name.function.go"
 			],
 			"settings": {
-				"foreground": "#A6E22E",
+				"foreground": "#A6E22E"
 			}
 		},
 		{
 			"name": "Go Function Calls",
 			"scope": "support.function.go",
 			"settings": {
-				"foreground": "#66D9EF",
+				"foreground": "#66D9EF"
 			}
 		},
 		{
@@ -838,7 +836,7 @@
 				"keyword.interface.go"
 			],
 			"settings": {
-				"foreground": "#66D9EF",
+				"foreground": "#66D9EF"
 			}
 		},
 		// C# Settings
@@ -923,7 +921,7 @@
 		{
 			"scope": [
 				"variable.parameter.fish",
-				"source.option.fish",
+				"source.option.fish"
 			],
 			"settings": {
 				"foreground": "#AE81FF"
@@ -963,7 +961,7 @@
 				"punctuation.definition.annotation",
 				"punctuation.definition.case-pattern",
 				"punctuation.separator",
-				"storage.type.function",
+				"storage.type.function"
 			],
 			"settings": {
 				"foreground": "#F92672"
@@ -981,7 +979,7 @@
 			"foreground": "#66D9EF"
 		},
 		"operatorOverloaded": "#f92672",
-		"macro": "#AE81FF",
+		"macro": "#AE81FF"
 	},
 	"semanticHighlighting": true
 }
