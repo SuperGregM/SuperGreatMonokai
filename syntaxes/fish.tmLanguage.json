@@ -1,7 +1,4 @@
 {
-  "information_for_contributors": [
-    "Copied from bmalehorn/vscode-fish https://github.com/bmalehorn/vscode-fish/blob/master/syntaxes/fish.tmLanguage.json"
-  ],
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "fileTypes": ["fish"],
   "firstLineMatch": "^#!.*\\bfish\\b",
