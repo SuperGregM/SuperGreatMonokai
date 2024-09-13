@@ -966,6 +966,12 @@
 			"settings": {
 				"foreground": "#F92672"
 			}
+		},
+		{
+			"scope": "keyword.other.definition.ini",
+			"settings": {
+				"foreground": "#66D9EF"
+			}
 		}
 	],
 	"semanticTokenColors": {
