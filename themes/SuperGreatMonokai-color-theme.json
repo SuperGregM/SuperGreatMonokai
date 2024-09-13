@@ -972,6 +972,12 @@
 			"settings": {
 				"foreground": "#66D9EF"
 			}
+		},
+		{
+			"scope": "entity.name.tag.yaml",
+			"settings": {
+				"foreground": "#66D9EF"
+			}
 		}
 	],
 	"semanticTokenColors": {
