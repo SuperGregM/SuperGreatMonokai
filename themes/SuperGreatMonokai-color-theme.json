@@ -973,7 +973,8 @@
 		"function.declaration": "#A6E22E",
 		"method": "#66D9EF",
 		"method.declaration": "#A6E22E",
-		"variable": "#f8f8f2",
+		"variable": "#0080ff",
+		"variable.declaration": "#f8f8f2",
 		"variable.defaultLibrary": {
 			"fontStyle": "italic",
 			"foreground": "#66D9EF"
