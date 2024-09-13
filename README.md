@@ -6,6 +6,8 @@ Editor colors are based on VSCode's Dark + theme.
 
 Adds fish Shell Syntax Highlighting Colors.
 
+Adds VimL Syntax Highlighting Colors.
+
 ## Adds my terminal theme colors:
 
 <img src="./resources/Terminal-Colors.png">
@@ -32,6 +34,8 @@ This theme incorporates the VSCode Monokai theme [@vscode_MonokaiTheme](https://
 This theme incorporates the VSCode Dark + Editor theme [@vscode_Dark+Theme](https://github.com/microsoft/vscode/)
 
 This theme bundles in Fish Shell Syntax Highlighter from [@bmalehorn](https://github.com/bmalehorn/vscode-fish)
+
+This theme bundles in VimL Syntax Highlighter from [@dunstontc](https://github.com/dunstontc/viml)
 
 This theme was created by [@def-SpaceWar](https://github.com/def-SpaceWar/sublime-monokai)
 

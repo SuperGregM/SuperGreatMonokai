@@ -1,0 +1,103 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "id": "./viml.tmLanguage.schema.json",
+    "title": "JSON schema for *.tmLanguage.json language definitions used by VSCode.",
+    "description": "See: https://github.com/Microsoft/vscode/tree/master/extensions",
+    "type": "object",
+    "required": [
+        "name",
+        "scopeName",
+        "patterns"
+    ],
+    "definitions": {
+
+        "name": {
+            "description": "The name which gets assigned to the portion matched.",
+            "type":"string",
+            "pattern": "[a-zA-Z\\-.]+"
+        },
+
+        "contentName": {
+            "description": "Assigns the name to the text between what is matched by the begin/end patterns.",
+            "type":"string",
+            "pattern": "[a-zA-Z\\-.]+"
+        },
+
+        "match": {
+            "description": "A regular expression which is used to identify the portion of text to which the name should be assigned.",
+            "type": "string",
+            "format": "regex"
+        },
+
+        "begin": { "type": "string", "format": "regex" },
+        "while": { "type": "string", "format": "regex" },
+        "end":   { "type": "string", "format": "regex" },
+
+        "captures":      { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
+
+        "beginCaptures": { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
+        "whileCaptures": { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
+        "endCaptures":   { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
+
+        "include": {
+            "description": "Allows you to reference a different language, recursively reference the grammar itself or a rule declared in this file’s repository.",
+            "type":"string",
+            "pattern": "#?[a-zA-Z\\-.]+"
+        },
+
+        "pattern": {
+            "description": "An actual rule used to parse the document.",
+            "anyOf": [
+                { "$ref": "#/definitions/match" },
+                { "$ref": "#/definitions/begin" },
+                { "$ref": "#/definitions/while" },
+                { "$ref": "#/definitions/end" },
+                { "$ref": "#/definitions/captures" },
+                { "$ref": "#/definitions/beginCaptures" },
+                { "$ref": "#/definitions/whileCaptures" },
+                { "$ref": "#/definitions/endCaptures" },
+                { "$ref": "#/definitions/name" },
+                { "$ref": "#/definitions/include" }
+            ]
+        }
+
+    },
+    "properties": {
+        "information_for_contributors": {
+            "type": "array"
+        },
+        "version": {
+            "description": "SHA of the latest commit containing an update to this definition.",
+            "type": "string"
+        },
+        "name": {
+            "description": "A nicely formatted display name for the grammar.",
+            "type": "string"
+        },
+        "scopeName": {
+            "description": "This should be a unique name for the grammar.",
+            "type":"string",
+            "pattern": "[a-zA-Z\\-.]+"
+        },
+        "firstLineMatch": {
+            "description": "A regular expression which is matched against the first line of the document.",
+            "type": "string"
+        },
+        "uuid": {
+            "description": "DEPRECATED",
+            "type": "string"
+        },
+        "patterns": {
+            "description": "An array with the actual rules used to parse the document.",
+            "type": "array",
+            "items": {
+              "type": "object",
+                "$ref": "#/definitions/pattern"
+            }
+        },
+        "repository": {
+            "description": "Allows you to reference a different language, recursively reference the grammar itself or a rule declared in this file’s repository.",
+            "type": "object"
+        }
+    }
+}
