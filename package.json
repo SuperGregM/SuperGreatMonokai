@@ -26,7 +26,6 @@
   "keywords": [
     "monokai",
     "dark",
-    "csharp syntax highlighting",
     "fish",
     "fish syntax highlighting",
     "shell",
@@ -53,19 +52,6 @@
         ],
         "firstLine": "^#!\\s*/.*\\bfish\\b",
         "configuration": "./language-configuration/fish-language-configuration.json"
-      },
-      {
-        "id": "csharp",
-        "extensions": [
-          ".cs",
-          ".csx",
-          ".cake"
-        ],
-        "aliases": [
-          "C# Sublime Colorizer",
-          "csharp"
-        ],
-        "configuration": "./language-configuration/csharp-language-configuration.json"
       },
       {
         "id": "viml",
@@ -103,11 +89,6 @@
         "embeddedLanguages": {
           "meta.embedded.block.fish": "fish"
         }
-      },
-      {
-        "language": "csharp",
-        "scopeName": "source.cs",
-        "path": "./syntaxes/csharp.tmLanguage.json"
       },
       {
         "language": "viml",

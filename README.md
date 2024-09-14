@@ -38,6 +38,3 @@ This theme bundles in Fish Shell Syntax Highlighter from [@bmalehorn](https://gi
 This theme bundles in VimL Syntax Highlighter from [@dunstontc](https://github.com/dunstontc/viml)
 
 This theme was created by [@def-SpaceWar](https://github.com/def-SpaceWar/sublime-monokai)
-
-This theme also bundles in this guys C# Syntax Highlighter:
-[@Maximetinu](https://github.com/Maximetinu/Sublime-Text-Monokai-theme-for-Visual-Studio-Code)
