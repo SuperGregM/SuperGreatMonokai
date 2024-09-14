@@ -978,6 +978,12 @@
 			"settings": {
 				"foreground": "#66D9EF"
 			}
+		},
+		{
+			"scope": "keyword.control.ssh_config",
+			"settings": {
+				"foreground": "#66D9EF"
+			}
 		}
 	],
 	"semanticTokenColors": {
