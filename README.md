@@ -8,6 +8,8 @@ Adds fish Shell Syntax Highlighting Colors.
 
 Adds VimL Syntax Highlighting Colors.
 
+Adds Nix Syntax Highlighting Colors.
+
 ## Adds my terminal theme colors:
 
 <img src="./resources/Terminal-Colors.png">
@@ -36,5 +38,7 @@ This theme incorporates the VSCode Dark + Editor theme [@vscode_Dark+Theme](http
 This theme bundles in Fish Shell Syntax Highlighter from [@bmalehorn](https://github.com/bmalehorn/vscode-fish)
 
 This theme bundles in VimL Syntax Highlighter from [@dunstontc](https://github.com/dunstontc/viml)
+
+This theme bundles in Nix Syntax Highlighter from [@nix-community](https://github.com/nix-community/vscode-nix-ide)
 
 This theme was created by [@def-SpaceWar](https://github.com/def-SpaceWar/sublime-monokai)

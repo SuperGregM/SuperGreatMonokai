@@ -9,3 +9,4 @@ SuperGreatMonokai.code-workspace
 
 # Keep icon.png file
 !resources/icon.png
+!resources/nix-icon.png

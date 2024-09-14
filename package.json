@@ -31,7 +31,9 @@
     "shell",
     "shell syntax highlighting",
     "viml",
-    "viml syntax highlighting"
+    "viml syntax highlighting",
+    "nix",
+    "nix syntax highlighting"
   ],
   "contributes": {
     "themes": [
@@ -72,6 +74,21 @@
           "ideavim"
         ],
         "configuration": "./language-configuration/viml-language-configuration.json"
+      },
+      {
+        "id": "nix",
+        "aliases": [
+          "Nix",
+          "nix"
+        ],
+        "extensions": [
+          ".nix"
+        ],
+        "icon": {
+          "light": "./resources/nix-icon.png",
+          "dark": "./resources/nix-icon.png"
+        },
+        "configuration": "./language-configuration/nix-language-configuration.json"
       }
     ],
     "grammars": [
@@ -94,6 +111,21 @@
         "language": "viml",
         "scopeName": "source.viml",
         "path": "./syntaxes/viml.tmLanguage.json"
+      },
+      {
+        "language": "nix",
+        "scopeName": "source.nix",
+        "path": "./syntaxes/nix.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.nix.codeblock",
+        "path": "./syntaxes/nix-codeblock.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.nix": "nix"
+        }
       }
     ]
   }
