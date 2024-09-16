@@ -2,6 +2,7 @@
 
 All notable changes to the "supergreatmonokai" extension will be documented in this file.
 
+- (2024-09-15) - Remove Old Editor Color Settings
 - (2024-09-14) - Add keyword.control.ssh_config to theme
 - (2024-09-14) - Add Nix Syntax Highlighting
 - (2024-09-13) - Remove C# Syntax Highlighting from Theme
