@@ -1,12 +1,35 @@
-node_modules
-.vscode/**
-.vscode-test/**
-.gitignore
-vsc-extension-quickstart.md
-**/*.sh
-resources/**
-SuperGreatMonokai.code-workspace
+# Ignore All
+**/*
+# Keep files
+!package.json
+!CHANGELOG.md
+!LICENSE
+!README.md
 
+language-configuration/**
+# Keep files
+!language-configuration/fish-language-configuration.json
+!language-configuration/nix-language-configuration.json
+!language-configuration/viml-language-configuration.json
+
+resources/**
 # Keep icon.png file
 !resources/icon.png
 !resources/nix-icon.png
+
+schemes/**
+# Keep files
+!schema/fish.tmlanguage.schema.json
+!schema/viml.tmLanguage.schema.json
+
+syntaxes/**
+# Keep files
+!syntaxes/fish-codeblock.json
+!syntaxes/fish.tmLanguage.json
+!syntaxes/nix-codeblock.json
+!syntaxes/nix.tmLanguage.json
+!syntaxes/viml.tmLanguage.json
+
+themes/**
+# Keep files
+!themes/SuperGreatMonokai-color-theme.json
