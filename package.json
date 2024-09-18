@@ -4,7 +4,7 @@
   "description": "Great VSCode theme based off sublime text's monokai mixed with VSCode's monokai.",
   "version": "0.0.6",
   "engines": {
-    "vscode": "^1.92.0"
+    "vscode": "^1.88.0"
   },
   "publisher": "SuperGregM",
   "author": {
