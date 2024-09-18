@@ -6,10 +6,10 @@
 		"editor.background": "#121212",
 		"activityBar.background": "#191919",
 		"sideBar.background": "#191919",
-		"checkbox.border": "#6b6b6b",
+		"checkbox.border": "#6B6B6B",
 		"editor.lineHighlightBorder": "#F81CE54D",
-		"editor.selectionBackground": "#f81ce54d",
-		"statusBarItem.remoteBackground": "#16825d",
+		"editor.selectionBackground": "#F81CE54D",
+		"statusBarItem.remoteBackground": "#16825D",
 		// My Terminal Theme
 		"terminal.ansiBlack": "#000000",
 		"terminal.ansiBlue": "#0000B2",
@@ -48,7 +48,7 @@
 			"scope": "comment",
 			"settings": {
 				// "foreground": "#75715E"
-				"foreground": "#88846f" // vscode
+				"foreground": "#88846F" // vscode
 			}
 		},
 		{
@@ -439,7 +439,7 @@
 				"markup.list.numbered.markdown"
 			],
 			"settings": {
-				"foreground": "#f8f8f2"
+				"foreground": "#F8F8F2"
 			}
 		},
 		{ // vscode
@@ -460,19 +460,19 @@
 		{
 			"scope": "token.warn-token",
 			"settings": {
-				"foreground": "#cd9731"
+				"foreground": "#CD9731"
 			}
 		},
 		{
 			"scope": "token.error-token",
 			"settings": {
-				"foreground": "#f44747"
+				"foreground": "#F44747"
 			}
 		},
 		{
 			"scope": "token.debug-token",
 			"settings": {
-				"foreground": "#b267e6"
+				"foreground": "#B267E6"
 			}
 		},
 		{
@@ -487,7 +487,7 @@
 			"name": "Public/Private",
 			"scope": "storage.type.modifier.access",
 			"settings": {
-				"foreground": "#f92672"
+				"foreground": "#F92672"
 			}
 		},
 		{
@@ -514,7 +514,7 @@
 				"punctuation.terminator.statement.js"
 			],
 			"settings": {
-				"foreground": "#f8f8f2"
+				"foreground": "#F8F8F2"
 			}
 		},
 		{
@@ -540,7 +540,7 @@
 				"meta.function-call.arguments.python"
 			],
 			"settings": {
-				"foreground": "#f8f8f2"
+				"foreground": "#F8F8F2"
 			}
 		},
 		{
@@ -561,21 +561,21 @@
 			"name": "Python Async Keyword",
 			"scope": "storage.type.function.async",
 			"settings": {
-				"foreground": "#f92672"
+				"foreground": "#F92672"
 			}
 		},
 		{
 			"name": "Python Decorator @",
 			"scope": "punctuation.definition.decorator.python",
 			"settings": {
-				"foreground": "#f92672"
+				"foreground": "#F92672"
 			}
 		},
 		{
 			"name": "Python .",
 			"scope": "punctuation.separator.period.python",
 			"settings": {
-				"foreground": "#f8f8f2"
+				"foreground": "#F8F8F2"
 			}
 		},
 		{
@@ -590,14 +590,14 @@
 			"name": "C++ Pragma stuff",
 			"scope": "entity.other.attribute-name.pragma.preprocessor",
 			"settings": {
-				"foreground": "#f92672"
+				"foreground": "#F92672"
 			}
 		},
 		{
 			"name": "C++ Punctuation Separator",
 			"scope": "punctuation.separator.colon",
 			"settings": {
-				"foreground": "#f8f8f2"
+				"foreground": "#F8F8F2"
 			}
 		},
 		{
@@ -659,7 +659,7 @@
 			"name": "C# Namespaces",
 			"scope": "entity.name.type.namespace.cs",
 			"settings": {
-				"foreground": "#fff"
+				"foreground": "#FFFFFF"
 			}
 		},
 		{
@@ -673,7 +673,7 @@
 				"keyword.other.struct.cs"
 			],
 			"settings": {
-				"foreground": "#66D9Ef",
+				"foreground": "#66D9EF",
 				"fontStyle": "italic"
 			}
 		},
@@ -729,7 +729,7 @@
 		{
 			"scope": "variable",
 			"settings": {
-				"foreground": "#0080ff",
+				"foreground": "#0080FF",
 				"fontStyle": ""
 			}
 		},
@@ -806,13 +806,13 @@
 		"function.declaration": "#A6E22E",
 		"method": "#66D9EF",
 		"method.declaration": "#A6E22E",
-		"variable": "#0080ff",
-		"variable.declaration": "#f8f8f2",
+		"variable": "#0080FF",
+		"variable.declaration": "#F8F8F2",
 		"variable.defaultLibrary": {
 			"fontStyle": "italic",
 			"foreground": "#66D9EF"
 		},
-		"operatorOverloaded": "#f92672",
+		"operatorOverloaded": "#F92672",
 		"macro": "#AE81FF"
 	},
 	"semanticHighlighting": true
