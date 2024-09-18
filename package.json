@@ -67,6 +67,10 @@
           ".gvim",
           ".ideavim"
         ],
+        "icon": {
+          "light": "./resources/vim-icon.png",
+          "dark": "./resources/vim-icon.png"
+        },
         "filenames": [
           "vim",
           "vimrc",

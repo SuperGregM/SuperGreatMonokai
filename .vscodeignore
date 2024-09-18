@@ -16,6 +16,7 @@ resources/**
 # Keep icon.png file
 !resources/icon.png
 !resources/nix-icon.png
+!resources/vim-icon.png
 
 schemes/**
 # Keep files
