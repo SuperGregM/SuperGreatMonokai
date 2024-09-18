@@ -9,6 +9,7 @@
 		"checkbox.border": "#6B6B6B",
 		"editor.lineHighlightBorder": "#F81CE54D",
 		"editor.selectionBackground": "#F81CE54D",
+		"minimap.selectionHighlight": "#F81CE54D",
 		"statusBarItem.remoteBackground": "#16825D",
 		// My Terminal Theme
 		"terminal.ansiBlack": "#000000",
