@@ -89,10 +89,20 @@ case $(uname) in
 Darwin)
     wgetCompatible='wget -q --show-progress'
     sedCompatible='gsed -i'
+    vsceCompatible='npx @vscode/vsce'
+    ovsxCompatible='npx ovsx'
+    prettierCompatible='npx prettier'
+    jsyamlCompatible='npx js-yaml'
+    npmDestantation="$XDG_DATA_HOME/npm/bin/"
     ;;
 Linux)
     wgetCompatible='wget'
     sedCompatible='sed -i'
+    vsceCompatible='npx vsce'
+    ovsxCompatible='npx ovsx'
+    prettierCompatible='npx prettier'
+    jsyamlCompatible='npx js-yaml'
+    npmDestantation='/usr/local/bin/'
     ;;
 *)
     printf "${TEXTRED}\n%s\n${FORMATRESET}" "Unsupported system"
@@ -101,28 +111,32 @@ Linux)
 esac
 
 check_vsce() {
-    if ! command -v vsce >/dev/null 2>&1; then
+    vsce_Dir="$npmDestantation/vsce"
+    if [ ! "$vsce_Dir" ]; then
         printf "${TEXTRED}\n%s\n${FORMATRESET}" "VS Code Extension Manager is not installed"
         exit
     fi
 }
 
 check_ovsx() {
-    if ! command -v ovsx >/dev/null 2>&1; then
+    ovsx_Dir="$npmDestantation/ovsx"
+    if [ ! -e "$ovsx_Dir" ]; then
         printf "${TEXTRED}\n%s\n${FORMATRESET}" "Open-VSX is not installed"
         exit
     fi
 }
 
 check_prettier() {
-    if ! command -v prettier >/dev/null 2>&1; then
+    prettier_Dir="$npmDestantation/prettier"
+    if [ ! -e "$prettier_Dir" ]; then
         printf "${TEXTRED}\n%s\n${FORMATRESET}" "Prettier is not installed"
         exit
     fi
 }
 
 check_js_yaml() {
-    if ! command -v js-yaml >/dev/null 2>&1; then
+    jsyaml_dir="$npmDestantation/js-yaml"
+    if [ ! -e "$jsyaml_dir" ]; then
         printf "${TEXTRED}\n%s\n${FORMATRESET}" "js-yaml is not installed"
         exit
     fi
@@ -133,9 +147,7 @@ publish_openvsx() {
     OVSX_PAT_VARIABLE=$(head -n 1 "$HOME/.ssh/.env/EXT_DEPLOY_OVSX_PAT.env")
     export OVSX_PAT="$OVSX_PAT_VARIABLE"
     # Publish to Open-VSX
-    npx ovsx publish
-    # Delete OVSX_PAT environment variable
-    unset OVSX_PAT
+    $ovsxCompatible publish
 }
 
 publish_vscode() {
@@ -143,9 +155,7 @@ publish_vscode() {
     VSCE_PAT_VARIABLE=$(head -n 1 "$HOME/.ssh/.env/EXT_DEPLOY_VSCE_PAT.env")
     export VSCE_PAT="$VSCE_PAT_VARIABLE"
     # Publish to VS Code Marketplace
-    npx vsce publish "$2" --no-git-tag-version
-    # Delete VSCE_PAT environment variable
-    unset VSCE_PAT
+    $vsceCompatible publish --no-git-tag-version
 }
 
 test_theme() {
@@ -169,8 +179,8 @@ update_nix() {
     $wgetCompatible -O ./syntaxes/nix.tmLanguage.yml https://raw.githubusercontent.com/SuperGregM/vscode-nix-ide/main/syntaxes/nix.YAML-tmLanguage
     $wgetCompatible -O ./language-configuration/nix-language-configuration.json https://raw.githubusercontent.com/SuperGregM/vscode-nix-ide/main/language-configuration.json
 
-    npx js-yaml syntaxes/nix.tmLanguage.yml >syntaxes/nix.tmLanguage.json
-    npx js-yaml syntaxes/nix-codeblock.yml >syntaxes/nix-codeblock.json
+    $jsyamlCompatible syntaxes/nix.tmLanguage.yml >syntaxes/nix.tmLanguage.json
+    $jsyamlCompatible syntaxes/nix-codeblock.yml >syntaxes/nix-codeblock.json
 }
 
 update_vim() {
@@ -189,7 +199,7 @@ change_log() {
 
     $sedCompatible 's/^\*/-/g' "$filename"
 
-    npx prettier --cache-location "$HOME/.cache/prettier" --write "$filename"
+    $prettierCompatible --cache-location "$HOME/.cache/prettier" --write "$filename"
 }
 
 package_extenison() {
@@ -197,7 +207,7 @@ package_extenison() {
 
     rm -rf ./supergreatmonokai.vsix
 
-    npx vsce package "$1" --no-git-tag-version --out ./supergreatmonokai.vsix
+    $vsceCompatible package "$1" --no-git-tag-version --out ./supergreatmonokai.vsix
 }
 
 # Check if an argument is provided
