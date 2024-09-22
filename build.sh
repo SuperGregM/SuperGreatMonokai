@@ -150,17 +150,33 @@ check_js_yaml() {
 }
 
 publish_openvsx() {
-    # Set OVSX_PAT environment variable
-    OVSX_PAT_VARIABLE=$(head -n 1 "$HOME/.ssh/.env/EXT_DEPLOY_OVSX_PAT.env")
-    export OVSX_PAT="$OVSX_PAT_VARIABLE"
+    if [ ! "$OVSX_PAT" ]; then
+        if [ -f "$HOME/.ssh/.env/EXT_DEPLOY_OVSX_PAT.env" ]; then
+            # Set OVSX_PAT environment variable
+            OVSX_PAT_VARIABLE=$(head -n 1 "$HOME/.ssh/.env/EXT_DEPLOY_OVSX_PAT.env")
+            export OVSX_PAT="$OVSX_PAT_VARIABLE"
+        else
+            printf "${TEXTRED}\n%s\n\n${FORMATRESET}" "   OVSX_PAT environment variable is not set"
+            exit
+        fi
+    fi
+    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Publishing SuperGreatMonokai to Open-VSX.org"
     # Publish to Open-VSX
     $ovsxCompatible publish
 }
 
 publish_vscode() {
-    # Set VSCE_PAT environment variable
-    VSCE_PAT_VARIABLE=$(head -n 1 "$HOME/.ssh/.env/EXT_DEPLOY_VSCE_PAT.env")
-    export VSCE_PAT="$VSCE_PAT_VARIABLE"
+    if [ ! "$VSCE_PAT" ]; then
+        if [ -f "$HOME/.ssh/.env/EXT_DEPLOY_VSCE_PAT.env" ]; then
+            # Set VSCE_PAT environment variable
+            VSCE_PAT_VARIABLE=$(head -n 1 "$HOME/.ssh/.env/EXT_DEPLOY_VSCE_PAT.env")
+            export VSCE_PAT="$VSCE_PAT_VARIABLE"
+        else
+            printf "${TEXTRED}\n%s\n\n${FORMATRESET}" "   VSCE_PAT environment variable is not set"
+            exit
+        fi
+    fi
+    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Publishing SuperGreatMonokai to VS Code Marketplace"
     # Publish to VS Code Marketplace
     $vsceCompatible publish --no-git-tag-version
 }
@@ -254,15 +270,11 @@ case "$1" in
     ;;
 -pubv | --publishvscode)
     check_vsce
-    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Publishing SuperGreatMonokai to VS Code Marketplace"
-    npx vsce publish "$2" --no-git-tag-version
-    # publish_vscode
+    publish_vscode
     ;;
 -pubo | --publishopenvsx)
     check_ovsx
-    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Publishing SuperGreatMonokai to Open-VSX.org"
-    npx ovsx publish
-    # publish_openvsx
+    publish_openvsx
     ;;
 -h | --help | *)
     show_usage
