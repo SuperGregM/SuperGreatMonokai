@@ -2,8 +2,6 @@
 # shellcheck disable=SC2034  # Unused variables left for readability
 
 set -e # -e: exit on error
-# set -o nounset
-set -o errexit
 
 ##################################################################################################################
 # tput Text Colors
