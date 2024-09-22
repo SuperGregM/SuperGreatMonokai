@@ -9,7 +9,7 @@
     "remoteUser": "dev_code",
     "runArgs": [
         "--env-file",
-        "../../../../../.ssh/.env/EXT_DEPLOY_DEV_CON.env"
+        "${localEnv:HOME}/.ssh/.env/EXT_DEPLOY_DEV_CON.env"
     ],
     "customizations": {
         "vscode": {
