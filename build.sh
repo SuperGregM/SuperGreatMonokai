@@ -69,6 +69,7 @@ show_usage() {
     printf "Usage: Build Extenion [options [parameters]]\n"
     printf "\n"
     printf "Options:\n"
+    printf '%s'" -${TEXTYELLOW}fr${FORMATRESET}     |   --${TEXTYELLOW}firstrun${FORMATRESET}           pkgx, Install Prettier, js-yaml, ovsx and vsce \n"
     printf '%s'" -${TEXTYELLOW}tt${FORMATRESET}     |   --${TEXTYELLOW}testtheme${FORMATRESET}          Test SuperGreatMonokai Theme JSON\n"
     printf '%s'" -${TEXTYELLOW}uf${FORMATRESET}     |   --${TEXTYELLOW}updatefish${FORMATRESET}         Update Fish JSON Files\n"
     printf '%s'" -${TEXTYELLOW}un${FORMATRESET}     |   --${TEXTYELLOW}updatenix${FORMATRESET}          Update Nix JSON Files\n"
@@ -82,9 +83,17 @@ show_usage() {
     return 0
 }
 
+check_pkgx() {
+    if ! command -v pkgx >/dev/null 2>&1; then
+        printf "${TEXTRED}\n%s\n${FORMATRESET}" "pkgx is not installed"
+        exit
+    fi
+}
+
 # Check if the system is macOS
 case $(uname) in
 Darwin)
+    check_pkgx
     wgetCompatible='wget -q --show-progress'
     sedCompatible='gsed -i'
     vsceCompatible='npx @vscode/vsce'
@@ -208,8 +217,20 @@ package_extenison() {
     $vsceCompatible package "$1" --no-git-tag-version --out ./supergreatmonokai.vsix
 }
 
+first_run() {
+    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "First Run.  Installing Apps with pkgx"
+    pkgx install npx@latest
+    pkgx npm install -g @vscode/vsce
+    pkgx npm install -g ovsx
+    pkgx npm install -g js-yaml
+    pkgx npm install -g prettier
+}
+
 # Check if an argument is provided
 case "$1" in
+-fr | --firstrun)
+    first_run
+    ;;
 -tt | --testtheme)
     test_theme
     ;;
