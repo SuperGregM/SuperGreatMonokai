@@ -2,6 +2,8 @@
 
 All notable changes to the "supergreatmonokai" extension will be documented in this file.
 
+- (2024-10-07) - (tag: v0.0.8) bump version number
+- (2024-09-18) - Add minimap.selectionHighlight Color
 - (2024-09-17) - (tag: v0.0.7) bump version number
 - (2024-09-17) - Lower VSCode Minium Version
 - (2024-09-15) - Add icon to VimL files
