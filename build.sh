@@ -236,10 +236,10 @@ package_extenison() {
 first_run() {
     printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "First Run.  Installing Apps with pkgx"
     pkgx install npx@latest
-    pkgx npm install -g @vscode/vsce
-    pkgx npm install -g ovsx
-    pkgx npm install -g js-yaml
-    pkgx npm install -g prettier
+    pkgx npm install -g @vscode/vsce@latest
+    pkgx npm install -g ovsx@latest
+    pkgx npm install -g js-yaml@latest
+    pkgx npm install -g prettier@latest
 }
 
 # Check if an argument is provided
