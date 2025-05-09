@@ -2,6 +2,8 @@
 
 All notable changes to the "supergreatmonokai" extension will be documented in this file.
 
+- (2025-05-09) - (tag: v0.0.9) bump version number
+- (2025-05-09) - Update terminal color Blue & Magenta settings for improved visibility
 - (2024-10-07) - (tag: v0.0.8) bump version number
 - (2024-09-18) - Add minimap.selectionHighlight Color
 - (2024-09-17) - (tag: v0.0.7) bump version number
@@ -24,4 +26,3 @@ All notable changes to the "supergreatmonokai" extension will be documented in t
 - (2024-09-02) - (tag: v0.0.3) Publish to VS Code Marketplace
 - (2024-09-01) - (tag: v0.0.2) Bump Up Version Number
 - (2024-09-01) - (tag: v0.0.1) First Public Release
-
