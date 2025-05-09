@@ -13,10 +13,10 @@
 		"statusBarItem.remoteBackground": "#16825D",
 		// My Terminal Theme
 		"terminal.ansiBlack": "#000000",
-		"terminal.ansiBlue": "#0000B2",
+		"terminal.ansiBlue": "#0050B2",
 		"terminal.ansiCyan": "#03A5B2",
 		"terminal.ansiGreen": "#00A500",
-		"terminal.ansiMagenta": "#8B008B",
+		"terminal.ansiMagenta": "#B300B3",
 		"terminal.ansiRed": "#AC1400",
 		"terminal.ansiWhite": "#D3D3D3",
 		"terminal.ansiYellow": "#FFD700",
