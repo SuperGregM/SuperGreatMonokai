@@ -43,26 +43,26 @@ BACKGROUND_WHITE='\033[47m'
 ##################################################################################################################
 
 show_usage() {
-    printf "Usage: Build Extenion [options [parameters]]\n"
+    printf "Usage: Build Extension [options [parameters]]\n"
     printf "\n"
     printf "Options:\n"
-    printf '%s'" -${TEXTYELLOW}fr${FORMATRESET}     |   --${TEXTYELLOW}firstrun${FORMATRESET}           pkgx, Install Prettier, js-yaml, ovsx and vsce \n"
-    printf '%s'" -${TEXTYELLOW}tt${FORMATRESET}     |   --${TEXTYELLOW}testtheme${FORMATRESET}          Test SuperGreatMonokai Theme JSON\n"
-    printf '%s'" -${TEXTYELLOW}uf${FORMATRESET}     |   --${TEXTYELLOW}updatefish${FORMATRESET}         Update Fish JSON Files\n"
-    printf '%s'" -${TEXTYELLOW}un${FORMATRESET}     |   --${TEXTYELLOW}updatenix${FORMATRESET}          Update Nix JSON Files\n"
-    printf '%s'" -${TEXTYELLOW}uv${FORMATRESET}     |   --${TEXTYELLOW}updatevim${FORMATRESET}          Update VimL JSON Files\n"
-    printf '%s'" -${TEXTYELLOW}cl${FORMATRESET}     |   --${TEXTYELLOW}changelog${FORMATRESET}          Generate Changelog\n"
-    printf '%s'" -${TEXTYELLOW}pack${FORMATRESET}   |   --${TEXTYELLOW}package${FORMATRESET}            Package Extenion for GitHub\n"
-    printf '%s'" -${TEXTYELLOW}pubv${FORMATRESET}   |   --${TEXTYELLOW}publishvscode${FORMATRESET}      Publish Extenion to VS Code Marketplace\n"
-    printf '%s'" -${TEXTYELLOW}pubo${FORMATRESET}   |   --${TEXTYELLOW}publishopenvsx${FORMATRESET}     Publish Extenion to Open-VSX.org\n"
-    printf '%s'" -${TEXTYELLOW}h${FORMATRESET}      |   --${TEXTYELLOW}help${FORMATRESET}               Print this message\n"
+    printf '%s'" -${TEXT_YELLOW}fr${FORMAT_RESET}     |   --${TEXT_YELLOW}firstrun${FORMAT_RESET}           pkgx, Install Prettier, js-yaml, ovsx and vsce \n"
+    printf '%s'" -${TEXT_YELLOW}tt${FORMAT_RESET}     |   --${TEXT_YELLOW}testtheme${FORMAT_RESET}          Test SuperGreatMonokai Theme JSON\n"
+    printf '%s'" -${TEXT_YELLOW}uf${FORMAT_RESET}     |   --${TEXT_YELLOW}updatefish${FORMAT_RESET}         Update Fish JSON Files\n"
+    printf '%s'" -${TEXT_YELLOW}un${FORMAT_RESET}     |   --${TEXT_YELLOW}updatenix${FORMAT_RESET}          Update Nix JSON Files\n"
+    printf '%s'" -${TEXT_YELLOW}uv${FORMAT_RESET}     |   --${TEXT_YELLOW}updatevim${FORMAT_RESET}          Update VimL JSON Files\n"
+    printf '%s'" -${TEXT_YELLOW}cl${FORMAT_RESET}     |   --${TEXT_YELLOW}changelog${FORMAT_RESET}          Generate Changelog\n"
+    printf '%s'" -${TEXT_YELLOW}pack${FORMAT_RESET}   |   --${TEXT_YELLOW}package${FORMAT_RESET}            Package Extension for GitHub\n"
+    printf '%s'" -${TEXT_YELLOW}pubv${FORMAT_RESET}   |   --${TEXT_YELLOW}publishvscode${FORMAT_RESET}      Publish Extension to VS Code Marketplace\n"
+    printf '%s'" -${TEXT_YELLOW}pubo${FORMAT_RESET}   |   --${TEXT_YELLOW}publishopenvsx${FORMAT_RESET}     Publish Extension to Open-VSX.org\n"
+    printf '%s'" -${TEXT_YELLOW}h${FORMAT_RESET}      |   --${TEXT_YELLOW}help${FORMAT_RESET}               Print this message\n"
 
     return 0
 }
 
 check_pkgx() {
     if ! command -v pkgx >/dev/null 2>&1; then
-        printf "${TEXTRED}\n%s\n${FORMATRESET}" "pkgx is not installed"
+        printf "${TEXT_RED}\n%s\n${FORMAT_RESET}" "pkgx is not installed"
         exit
     fi
 }
@@ -74,54 +74,54 @@ Darwin)
     wgetCompatible='wget -q --show-progress'
     sedCompatible='gsed -i'
     vsceCompatible='npx @vscode/vsce'
-    ovsxCompatible='npx ovsx'
+    ovsx_Compatible='npx ovsx'
     prettierCompatible='npx prettier'
-    jsyamlCompatible='npx js-yaml'
-    npmDestantation="$XDG_DATA_HOME/npm/bin/"
+    js_yaml_Compatible='npx js-yaml'
+    npm_Destination="$XDG_DATA_HOME/npm/bin/"
     ;;
 Linux)
     wgetCompatible='wget'
     sedCompatible='sed -i'
     vsceCompatible='npx vsce'
-    ovsxCompatible='npx ovsx'
+    ovsx_Compatible='npx ovsx'
     prettierCompatible='npx prettier'
-    jsyamlCompatible='npx js-yaml'
-    npmDestantation='/usr/local/bin/'
+    js_yaml_Compatible='npx js-yaml'
+    npm_Destination='/usr/local/bin/'
     ;;
 *)
-    printf "${TEXTRED}\n%s\n${FORMATRESET}" "Unsupported system"
+    printf "${TEXT_RED}\n%s\n${FORMAT_RESET}" "Unsupported system"
     exit
     ;;
 esac
 
 check_vsce() {
-    vsce_Dir="$npmDestantation/vsce"
+    vsce_Dir="$npm_Destination/vsce"
     if [ ! "$vsce_Dir" ]; then
-        printf "${TEXTRED}\n%s\n${FORMATRESET}" "VS Code Extension Manager is not installed"
+        printf "${TEXT_RED}\n%s\n${FORMAT_RESET}" "VS Code Extension Manager is not installed"
         exit
     fi
 }
 
 check_ovsx() {
-    ovsx_Dir="$npmDestantation/ovsx"
+    ovsx_Dir="$npm_Destination/ovsx"
     if [ ! -e "$ovsx_Dir" ]; then
-        printf "${TEXTRED}\n%s\n${FORMATRESET}" "Open-VSX is not installed"
+        printf "${TEXT_RED}\n%s\n${FORMAT_RESET}" "Open-VSX is not installed"
         exit
     fi
 }
 
 check_prettier() {
-    prettier_Dir="$npmDestantation/prettier"
+    prettier_Dir="$npm_Destination/prettier"
     if [ ! -e "$prettier_Dir" ]; then
-        printf "${TEXTRED}\n%s\n${FORMATRESET}" "Prettier is not installed"
+        printf "${TEXT_RED}\n%s\n${FORMAT_RESET}" "Prettier is not installed"
         exit
     fi
 }
 
 check_js_yaml() {
-    jsyaml_dir="$npmDestantation/js-yaml"
+    jsyaml_dir="$npm_Destination/js-yaml"
     if [ ! -e "$jsyaml_dir" ]; then
-        printf "${TEXTRED}\n%s\n${FORMATRESET}" "js-yaml is not installed"
+        printf "${TEXT_RED}\n%s\n${FORMAT_RESET}" "js-yaml is not installed"
         exit
     fi
 }
@@ -133,13 +133,13 @@ publish_openvsx() {
             OVSX_PAT_VARIABLE=$(head -n 1 "$HOME/.ssh/.env/EXT_DEPLOY_OVSX_PAT.env")
             export OVSX_PAT="$OVSX_PAT_VARIABLE"
         else
-            printf "${TEXTRED}\n%s\n\n${FORMATRESET}" "   OVSX_PAT environment variable is not set"
+            printf "${TEXT_RED}\n%s\n\n${FORMAT_RESET}" "   OVSX_PAT environment variable is not set"
             exit
         fi
     fi
-    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Publishing SuperGreatMonokai to Open-VSX.org"
+    printf "${TEXT_GREEN}\n%s\n${FORMAT_RESET}" "Publishing SuperGreatMonokai to Open-VSX.org"
     # Publish to Open-VSX
-    $ovsxCompatible publish
+    $ovsx_Compatible publish
 }
 
 publish_vscode() {
@@ -149,23 +149,23 @@ publish_vscode() {
             VSCE_PAT_VARIABLE=$(head -n 1 "$HOME/.ssh/.env/EXT_DEPLOY_VSCE_PAT.env")
             export VSCE_PAT="$VSCE_PAT_VARIABLE"
         else
-            printf "${TEXTRED}\n%s\n\n${FORMATRESET}" "   VSCE_PAT environment variable is not set"
+            printf "${TEXT_RED}\n%s\n\n${FORMAT_RESET}" "   VSCE_PAT environment variable is not set"
             exit
         fi
     fi
-    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Publishing SuperGreatMonokai to VS Code Marketplace"
+    printf "${TEXT_GREEN}\n%s\n${FORMAT_RESET}" "Publishing SuperGreatMonokai to VS Code Marketplace"
     # Publish to VS Code Marketplace
     $vsceCompatible publish --no-git-tag-version
 }
 
 test_theme() {
-    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Testing SuperGreatMonokai Theme JSON"
+    printf "${TEXT_GREEN}\n%s\n${FORMAT_RESET}" "Testing SuperGreatMonokai Theme JSON"
 
     sed 's/\/\/.*//' themes/SuperGreatMonokai-color-theme.json | jq empty
 }
 
 update_fish() {
-    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Updating Fish JSON Files"
+    printf "${TEXT_GREEN}\n%s\n${FORMAT_RESET}" "Updating Fish JSON Files"
 
     $wgetCompatible -O ./syntaxes/fish-codeblock.json https://raw.githubusercontent.com/SuperGregM/vscode-fish/master/syntaxes/codeblock.json
     $wgetCompatible -O ./syntaxes/fish.tmLanguage.json https://raw.githubusercontent.com/SuperGregM/vscode-fish/master/syntaxes/fish.tmLanguage.json
@@ -173,25 +173,25 @@ update_fish() {
 }
 
 update_nix() {
-    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Updating Nix JSON Files"
+    printf "${TEXT_GREEN}\n%s\n${FORMAT_RESET}" "Updating Nix JSON Files"
 
     $wgetCompatible -O ./syntaxes/nix-codeblock.yml https://raw.githubusercontent.com/SuperGregM/vscode-nix-ide/main/syntaxes/injection.yml
     $wgetCompatible -O ./syntaxes/nix.tmLanguage.yml https://raw.githubusercontent.com/SuperGregM/vscode-nix-ide/main/syntaxes/nix.YAML-tmLanguage
     $wgetCompatible -O ./language-configuration/nix-language-configuration.json https://raw.githubusercontent.com/SuperGregM/vscode-nix-ide/main/language-configuration.json
 
-    $jsyamlCompatible syntaxes/nix.tmLanguage.yml >syntaxes/nix.tmLanguage.json
-    $jsyamlCompatible syntaxes/nix-codeblock.yml >syntaxes/nix-codeblock.json
+    $js_yaml_Compatible syntaxes/nix.tmLanguage.yml >syntaxes/nix.tmLanguage.json
+    $js_yaml_Compatible syntaxes/nix-codeblock.yml >syntaxes/nix-codeblock.json
 }
 
 update_vim() {
-    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Updating VimL Files"
+    printf "${TEXT_GREEN}\n%s\n${FORMAT_RESET}" "Updating VimL Files"
 
     $wgetCompatible -O ./syntaxes/viml.tmLanguage.json https://raw.githubusercontent.com/SuperGregM/viml-vscode/master/syntaxes/viml.tmLanguage.json
     $wgetCompatible -O ./language-configuration/viml-language-configuration.json https://raw.githubusercontent.com/SuperGregM/viml-vscode/master/language-configuration.json
 }
 
 change_log() {
-    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Generating Changelog"
+    printf "${TEXT_GREEN}\n%s\n${FORMAT_RESET}" "Generating Changelog"
 
     filename=./CHANGELOG.md
 
@@ -202,8 +202,8 @@ change_log() {
     $prettierCompatible --cache-location "$HOME/.cache/prettier" --write "$filename"
 }
 
-package_extenison() {
-    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "Packaging SuperGreatMonokai"
+package_extension() {
+    printf "${TEXT_GREEN}\n%s\n${FORMAT_RESET}" "Packaging SuperGreatMonokai"
 
     rm -rf ./supergreatmonokai.vsix
 
@@ -211,7 +211,7 @@ package_extenison() {
 }
 
 first_run() {
-    printf "${TEXTGREEN}\n%s\n${FORMATRESET}" "First Run.  Installing Apps with pkgx"
+    printf "${TEXT_GREEN}\n%s\n${FORMAT_RESET}" "First Run.  Installing Apps with pkgx"
     pkgx install npx@latest
     pkgx npm install -g @vscode/vsce@latest
     pkgx npm install -g ovsx@latest
@@ -243,7 +243,7 @@ case "$1" in
     ;;
 -pack | --package)
     check_vsce
-    package_extenison "$2"
+    package_extension "$2"
     ;;
 -pubv | --publishvscode)
     check_vsce
