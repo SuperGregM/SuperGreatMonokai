@@ -4,64 +4,41 @@
 set -e # -e: exit on error
 
 ##################################################################################################################
-# tput Text Colors
-
-#tput setaf 0 = Black
-#tput setaf 1 = Dark Red                    Warning
-#tput setaf 2 = Dark Green                  Command Completed
-#tput setaf 3 = Dark Yellow                 Recommended Commands / Extras
-#tput setaf 4 = Dark Blue                   Info Needs
-#tput setaf 5 = Dark Magenta/Dark Pink
-#tput setaf 6 = Dark Cyan
-#tput setaf 7 = Dark White/Light Grey
-#tput setaf 8 = Light Black/Dark Grey
-#tput setaf 9 = Light Red                   Warning
-#tput setaf 10 = Light Green                Command Completed
-#tput setaf 11 = Light Yellow               Recommended Commands / Extras
-#tput setaf 12 = Light Blue                 Info Needs
-#tput setaf 13 = Light Magenta/Light Pink
-#tput setaf 14 = Light Cyan
-#tput setaf 15 = Light White
-
-# tput sgr0 = reset color
-
-# tput setaf 1; echo "This text is Dark Red."; tput sgr0
-
-##################################################################################################################
 # printf Colors and Formats
 
 # General Formatting
-FORMATRESET="\x1B[0m"
-FORMATBRIGHT="\x1B[1m"
-FORMATDIM="\x1B[2m"
-FORMATITALICS="\x1B[3m"
-FORMATUNDERSCORE="\x1B[4m"
-FORMATBLINK="\x1B[5m"
-FORMATREGULAR="\x1B[6m"
-FORMATREVERSE="\x1B[7m"
-FORMATHIDDEN="\x1B[8m"
+FORMAT_RESET='\033[0m'
+FORMAT_BRIGHT='\033[1m'
+FORMAT_DIM='\033[2m'
+FORMAT_ITALICS='\033[3m'
+FORMAT_UNDERSCORE='\033[4m'
+FORMAT_BLINK='\033[5m'
+FORMAT_REVERSE='\033[7m'
+FORMAT_HIDDEN='\033[8m'
 
 # Foreground Colors
-TEXTBLACK="\x1B[30m"
-TEXTRED="\x1B[31m"    #Warning
-TEXTGREEN="\x1B[32m"  #Command Completed
-TEXTYELLOW="\x1B[33m" #Recommended Commands / Extras
-TEXTBLUE="\x1B[34m"   #Info Needs
-TEXTMAGENTA="\x1B[35m"
-TEXTCYAN="\x1B[36m"
-TEXTWHITE="\x1B[37m"
+TEXT_BLACK='\033[30m'
+TEXT_RED='\033[31m'    # Warning
+TEXT_GREEN='\033[32m'  # Command Completed
+TEXT_YELLOW='\033[33m' # Recommended Commands / Extras
+TEXT_BLUE='\033[34m'
+TEXT_MAGENTA='\033[35m'
+TEXT_CYAN='\033[36m' # Info Needs
+TEXT_WHITE='\033[37m'
 
 # Background Colors
-BACKGROUNDBLACK="\x1B[40m"
-BACKGROUNDRED="\x1B[41m"
-BACKGROUNDGREEN="\x1B[42m"
-BACKGROUNDYELLOW="\x1B[43m"
-BACKGROUNDBLUE="\x1B[44m"
-BACKGROUNDMAGENTA="\x1B[45m"
-BACKGROUNDCYAN="\x1B[46m"
-BACKGROUNDWHITE="\x1B[47m"
+BACKGROUND_BLACK='\033[40m'
+BACKGROUND_RED='\033[41m'
+BACKGROUND_GREEN='\033[42m'
+BACKGROUND_YELLOW='\033[43m'
+BACKGROUND_BLUE='\033[44m'
+BACKGROUND_MAGENTA='\033[45m'
+BACKGROUND_CYAN='\033[46m'
+BACKGROUND_WHITE='\033[47m'
 
-# printf "${TEXTRED}\n%s\n${FORMATRESET}" "This text is Dark Red."
+# Example Usage
+# printf ' %sThis is a warning%s\n' "$TEXT_RED" "$FORMAT_RESET"
+# printf ' %s%sInfo:%s Details here\n' "$FORMAT_UNDERSCORE" "$TEXT_CYAN" "$FORMAT_RESET"
 
 ##################################################################################################################
 
