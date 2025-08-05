@@ -4,13 +4,16 @@
 	"colors": {
 		//  My Editor Color Settings
 		"editor.background": "#121212",
+		"editor.foreground": "#ececec",
 		"activityBar.background": "#191919",
 		"sideBar.background": "#191919",
 		"checkbox.border": "#6B6B6B",
 		"editor.lineHighlightBorder": "#F81CE54D",
 		"editor.selectionBackground": "#F81CE54D",
+		"foreground": "#ececec",
 		"minimap.selectionHighlight": "#F81CE54D",
 		"statusBarItem.remoteBackground": "#16825D",
+		"titleBar.activeForeground": "#ececec",
 		// My Terminal Theme
 		"terminal.ansiBlack": "#000000",
 		"terminal.ansiBlue": "#0050B2",
