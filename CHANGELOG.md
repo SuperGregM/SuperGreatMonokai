@@ -2,6 +2,8 @@
 
 All notable changes to the "supergreatmonokai" extension will be documented in this file.
 
+- (2025-08-04) - (tag: v0.1.0) bump version number to 0.1.0
+- (2025-08-04) - Update foreground colors for improved visibility in editor and title bar and sidebars
 - (2025-05-09) - (tag: v0.0.9) bump version number
 - (2025-05-09) - Update terminal color Blue & Magenta settings for improved visibility
 - (2024-10-07) - (tag: v0.0.8) bump version number
